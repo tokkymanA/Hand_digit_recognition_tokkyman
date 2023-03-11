@@ -1,0 +1,73 @@
+<html lang='en'>
+
+<head>
+  
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+  <link rel='stylesheet' href='css/styles.css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Just+Another+Hand&display=swap'>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="vendor/opencv.js"></script>
+  
+  
+  <script src="Draw.js"></script>
+  <script src="Process.js"></script>
+  <script src="rule.js"></script>
+  
+
+</head>
+
+<body>
+
+  <div class='container'>
+  
+    
+
+    <h1 class="title_project">Hand digit recognition</h1>
+    <h2 id='question'><span id='n1'>3</span> + <span id='n2'>2</span> = </h2>
+
+    
+    <canvas id="canvas" width="150" height="150"></canvas>
+
+  </div>
+
+  <div class='container'>
+    <button id='checkAnswer' class='btn' value='Check'>Check Answer</button>
+    <button id='Reset_game' class='btn_reset' value='Check'>Rub</button>
+  </div>
+
+  
+  <script>
+    Make_question()
+    load_model()
+    Cavas_setup()
+    
+
+    document.getElementById('checkAnswer').addEventListener('click', function (){
+      
+      predic_image()
+      check()
+      Clear_my_canvas()
+      Make_question()
+      
+      
+    })
+
+    document.getElementById('Reset_game').addEventListener('click', function (){
+      
+      Clear_my_canvas()
+      
+      
+    })
+  </script>
+
+  
+
+  
+  
+  
+</body>
+
+</html>
